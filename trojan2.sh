@@ -29,7 +29,7 @@ your_domain=$(cat /etc/nginx/nginx.conf | grep server_name | awk '{ print $2 }' 
 systemctl restart nginx
 	curl https://get.acme.sh | sh
 	~/.acme.sh/acme.sh --issue -d $your_domain --nginx
-  ~/.acme.sh/acme.sh --update-account --accountemail zlweicoder@outlook.com
+	~/.acme.sh/acme.sh --register-account -m zlweicoder@outlook.com
 	~/.acme.sh/acme.sh --installcert -d $your_domain --key-file /usr/local/etc/trojan/private.key --fullchain-file /usr/local/etc/trojan/cert.crt
 	~/.acme.sh/acme.sh --upgrade --auto-upgrade
 	chmod -R 755 /usr/local/etc/trojan
